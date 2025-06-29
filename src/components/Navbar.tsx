@@ -48,13 +48,13 @@ export default function Navbar() {
     <nav className="bg-white text-gray-800 shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <a href="#home" className="flex items-center pl-2">
-          <img
-            src="/logo1.png" // pastikan file ini ada di folder /public/
-            alt="Logo"
-            className="h-11 w-auto"
-          />
-        </a>
+       <a href="#home" className="flex items-center pl-2">
+        <img
+        src="/Logo1.png"
+        alt="Logo"
+        className="h-11 w-auto"
+         />
+      </a>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6">
