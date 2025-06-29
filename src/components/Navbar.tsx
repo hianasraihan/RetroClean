@@ -9,18 +9,18 @@ export default function Navbar() {
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
 
   const navItems = [
-    { name: "Beranda", href: "#home" },
-    { name: "Tentang", href: "#about" },
-    { name: "Layanan", href: "#services" },
-    { name: "Kontak", href: "#contact" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Contact", href: "#contact" },
   ];
 
-  // Scroll smooth untuk browser
+  // Scroll smooth
   useEffect(() => {
     document.documentElement.classList.add("scroll-smooth");
   }, []);
 
-  // Observer untuk deteksi scroll & update active menu
+  // Observer to set active section
   useEffect(() => {
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       for (const entry of entries) {
@@ -35,7 +35,7 @@ export default function Navbar() {
     const observer = new IntersectionObserver(handleIntersect, {
       root: null,
       rootMargin: "0px",
-      threshold: 0.6, // Trigger saat 60% terlihat
+      threshold: 0.6,
     });
 
     const sections = document.querySelectorAll("section[id]");
@@ -49,7 +49,11 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <a href="#home" className="flex items-center pl-2">
-          <img src="/logo1.png" alt="Logo" className="h-11 w-auto" />
+          <img
+            src="/logo1.png" // pastikan file ini ada di folder /public/
+            alt="Logo"
+            className="h-11 w-auto"
+          />
         </a>
 
         {/* Desktop Menu */}
@@ -81,7 +85,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu with smooth transition */}
+      {/* Mobile Menu */}
       <div
         ref={mobileMenuRef}
         className={`md:hidden px-4 overflow-hidden transition-all duration-500 ${
